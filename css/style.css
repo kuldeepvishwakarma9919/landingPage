@@ -1,0 +1,111 @@
+/* Custom Fonts (Optional: Use system fonts for simplicity) */
+/* body { font-family: 'Arial', sans-serif; } */
+
+/* --- General Styling --- */
+body {
+    background-color: #f7f7f7; /* Slightly off-white background */
+}
+a {
+    transition: color 0.2s ease-in-out;
+}
+.text-muted i {
+    color: #6c757d; /* Standard muted color */
+}
+
+/* --- 1. Header Styling --- */
+.logo h2 {
+    font-weight: 700;
+    color: #333; /* Darker logo text */
+}
+
+/* --- 2. Secondary Navigation Styling --- */
+.secondary-nav a {
+    font-size: 0.9rem;
+    color: #495057; /* Slightly darker than muted */
+}
+
+/* --- 3. Hero Banner Styling --- */
+.hero-banner {
+    padding-bottom: 60px !important; /* Extra padding at the bottom for spacing */
+}
+.banner-box {
+    background-color: #f0f3f8; /* Light blue/gray background for the banner */
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+}
+
+/* Score Text */
+.score-text {
+    font-weight: 600;
+    color: #dc3545; /* Red color for sale/offer text */
+    display: flex;
+    align-items: center;
+}
+.score-text .dot {
+    display: inline-block;
+    width: 6px;
+    height: 6px;
+    background-color: #dc3545;
+    border-radius: 50%;
+}
+
+/* Banner Title */
+.banner-title {
+    color: #333;
+    line-height: 1.2;
+    max-width: 800px;
+}
+
+/* Buttons */
+.btn-orange {
+    background-color: #ff6600; /* DropCart's orange primary color */
+    border-color: #ff6600;
+    color: #fff;
+    padding: 10px 30px;
+    font-weight: 600;
+    border-radius: 6px;
+    transition: background-color 0.2s;
+}
+.btn-orange:hover {
+    background-color: #e65c00;
+    border-color: #e65c00;
+    color: #fff;
+}
+
+/* Find More Link */
+.find-more-link {
+    font-weight: 600;
+    color: #333 !important;
+}
+.find-more-link:hover {
+    color: #ff6600 !important;
+}
+
+/* Football Image Placeholder (Styling to simulate the image area) */
+.football-image-placeholder {
+    /* The actual image would be placed here. */
+    /* I am adding some styles to keep the space for the image */
+    width: 100%;
+    height: 250px; /* Adjust height as needed */
+    background: url('placeholder_football.png') no-repeat center center / contain;
+    /* You need to replace 'placeholder_football.png' with the actual image path */
+}
+/* For the purpose of this example, let's use a background color if the image is not available */
+/* .football-image-placeholder { background-color: #ddd; border-radius: 50%; width: 200px; height: 200px; margin: auto; } */
+
+
+/* Pagination Dots */
+.pagination-dot {
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    background-color: #ccc;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+.pagination-dot.active-dot {
+    background-color: #ff6600; /* Orange for active dot */
+    width: 20px; /* Active dot is elongated */
+    border-radius: 4px; /* Slightly rounded rectangle */
+}

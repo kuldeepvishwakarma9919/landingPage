@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Elite Portfolio | Digital Solutions</title>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --bg-body: #ffffff;
+            --bg-subtle: #fcfcfd;
+            --accent: #4f46e5; /* Indigo Blue */
+            --accent-soft: #eef2ff;
+            --gold: #b45309; /* Subtle Gold for highlights */
+            --text-dark: #111827;
+            --text-light: #6b7280;
+            --border: #f1f5f9;
+            --shadow-sm: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+            --shadow-lg: 0 20px 25px -5px rgba(0, 0, 0, 0.04);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: var(--bg-body);
+            color: var(--text-dark);
+            line-height: 1.6;
+        }
+
+        html { scroll-behavior: smooth; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+        section { padding: 120px 0; }
+
+        /* Modern Navigation */
+        nav {
+            padding: 15px 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(15px);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 1px solid var(--border);
+        }
+        .logo { font-weight: 800; font-size: 1.5rem; letter-spacing: -0.5px; color: var(--text-dark); }
+        .logo span { color: var(--accent); }
+
+        /* Hero Section - Clean & Impactful */
+        .hero { 
+            background: linear-gradient(135deg, #f8fafc 0%, #ffffff 100%);
+            padding: 140px 0 100px; 
+            text-align: center;
+            border-bottom: 1px solid var(--border);
+        }
+        .hero .badge {
+            background: var(--accent-soft);
+            color: var(--accent);
+            padding: 8px 16px;
+            border-radius: 100px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+            display: inline-block;
+        }
+        .hero h1 { 
+            font-size: clamp(2.8rem, 7vw, 4.5rem); 
+            font-weight: 800; 
+            margin-bottom: 24px; 
+            line-height: 1.1;
+            background: linear-gradient(to right, #111827, #4f46e5);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .hero p { color: var(--text-light); font-size: 1.3rem; max-width: 750px; margin: 0 auto 40px; }
+        
+        .btn-primary {
+            background: var(--text-dark);
+            color: white;
+            padding: 18px 36px;
+            border-radius: 14px;
+            text-decoration: none;
+            font-weight: 600;
+            display: inline-block;
+            transition: 0.3s;
+            box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1);
+        }
+        .btn-primary:hover { background: var(--accent); transform: translateY(-3px); }
+
+        /* Services Grid */
+        .section-header { text-align: center; margin-bottom: 70px; }
+        .section-header h2 { font-size: 2.5rem; font-weight: 800; color: var(--text-dark); }
+        .section-header p { color: var(--gold); font-weight: 600; text-transform: uppercase; font-size: 0.9rem; letter-spacing: 1px; }
+
+        .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
+        .service-card { 
+            padding: 50px 40px; 
+            background: white;
+            border: 1px solid var(--border); 
+            border-radius: 30px; 
+            transition: 0.4s;
+            text-align: center;
+        }
+        .service-card:hover { 
+            border-color: transparent; 
+            box-shadow: var(--shadow-lg);
+            transform: translateY(-10px);
+        }
+        .icon-box {
+            width: 70px; height: 70px; background: var(--accent-soft);
+            color: var(--accent); border-radius: 20px;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 1.8rem; margin: 0 auto 25px;
+        }
+
+        /* Projects Section */
+        .projects-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 40px; }
+        .project-card { 
+            border-radius: 24px; 
+            overflow: hidden; 
+            background: white;
+            border: 1px solid var(--border);
+        }
+        .project-img { 
+            height: 280px; background: #f8fafc; 
+            display: flex; align-items: center; justify-content: center; 
+            font-size: 5rem; color: #e2e8f0;
+            transition: 0.5s;
+        }
+        .project-card:hover .project-img { background: var(--accent-soft); color: var(--accent); }
+        .project-info { padding: 30px; }
+        .project-info h4 { font-size: 1.4rem; margin-bottom: 10px; }
+        .project-info p { color: var(--text-light); }
+
+        /* Testimonials */
+        .testimonial-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
+        .testi-card { 
+            background: #fff; padding: 40px; border-radius: 30px; 
+            border: 1px solid var(--border); box-shadow: var(--shadow-sm);
+        }
+        .testi-card i { color: #fbbf24; margin-bottom: 20px; display: block; }
+        .testi-user { margin-top: 25px; display: flex; align-items: center; gap: 15px; }
+        .user-info h5 { font-weight: 700; }
+
+        /* FAQ */
+        .faq-container { max-width: 850px; margin: 0 auto; }
+        .faq-item { 
+            background: var(--bg-subtle); margin-bottom: 15px; 
+            padding: 25px; border-radius: 20px; border: 1px solid var(--border);
+        }
+        .faq-item h4 { color: var(--accent); margin-bottom: 10px; }
+
+        /* Fixed Contact Bar - Ultra Clean */
+        .contact-bar {
+            position: fixed; bottom: 30px; left: 50%; transform: translateX(-50%);
+            background: #111827; color: white;
+            padding: 14px 28px; border-radius: 100px; display: flex; gap: 25px; z-index: 1000;
+            box-shadow: 0 25px 50px -12px rgba(0,0,0,0.25);
+        }
+        .contact-bar a { color: white; text-decoration: none; font-weight: 600; display: flex; align-items: center; gap: 10px; font-size: 0.95rem; }
+        .contact-bar .sep { width: 1px; height: 20px; background: rgba(255,255,255,0.2); }
+
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2.8rem; }
+            .section-header h2 { font-size: 2rem; }
+            .contact-bar { width: 90%; gap: 10px; justify-content: space-between; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <nav>
+            <div class="logo">ELITE<span>CORE</span></div>
+            <a href="https://wa.me/919999999999" class="btn-primary" style="padding: 12px 24px; font-size: 0.9rem; border-radius: 100px;">Contact Sales</a>
+        </nav>
+    </div>
+
+    <header class="hero">
+        <div class="container">
+            <span class="badge">Trusted by 50+ Businesses</span>
+            <h1>Transforming Ideas Into<br>Digital Reality.</h1>
+            <p>High-end web solutions and performance marketing tailored for visionary brands and growing startups.</p>
+            <a href="#projects" class="btn-primary">Explore Portfolio</a>
+        </div>
+    </header>
+
+    <section id="services">
+        <div class="container">
+            <div class="section-header">
+                <p>Expertise</p>
+                <h2>Premium Services</h2>
+            </div>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="icon-box"><i class="fas fa-code"></i></div>
+                    <h3>Elite Web Dev</h3>
+                    <p>Fast, secure, and luxury-grade websites built with the latest technologies.</p>
+                </div>
+                <div class="service-card">
+                    <div class="icon-box"><i class="fas fa-rocket"></i></div>
+                    <h3>Growth Ads</h3>
+                    <p>Data-driven Google & Meta ads that maximize your ROI and scale revenue.</p>
+                </div>
+                <div class="service-card">
+                    <div class="icon-box"><i class="fas fa-fingerprint"></i></div>
+                    <h3>Brand Strategy</h3>
+                    <p>Creating memorable brand identities that stand out in crowded markets.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects" style="background-color: var(--bg-subtle);">
+        <div class="container">
+            <div class="section-header">
+                <p>Showcase</p>
+                <h2>Selected Works</h2>
+            </div>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <div class="project-img"><i class="fas fa-shopping-bag"></i></div>
+                    <div class="project-info">
+                        <h4>Luxe E-Commerce</h4>
+                        <p>Scalable platform with seamless checkout experience.</p>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-img"><i class="fas fa-chart-pie"></i></div>
+                    <div class="project-info">
+                        <h4>Fintech Dashboard</h4>
+                        <p>Complex data visualization and user-centric UI design.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <div class="container">
+            <div class="section-header">
+                <p>Feedback</p>
+                <h2>Client Success Stories</h2>
+            </div>
+            <div class="testimonial-grid">
+                <div class="testi-card">
+                    <div style="display: flex; gap: 4px; color: #fbbf24; margin-bottom: 15px;">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    </div>
+                    <p>"The attention to detail is unmatched. Our lead conversion increased by 40% after the redesign."</p>
+                    <div class="testi-user">
+                        <div class="user-info">
+                            <h5>Vikram Singh</h5>
+                            <small style="color:var(--text-light)">CEO, TechMatrix</small>
+                        </div>
+                    </div>
+                </div>
+                <div class="testi-card">
+                    <div style="display: flex; gap: 4px; color: #fbbf24; margin-bottom: 15px;">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    </div>
+                    <p>"Professional, timely, and highly skilled. They truly understand modern digital aesthetics."</p>
+                    <div class="testi-user">
+                        <div class="user-info">
+                            <h5>Sarah Johnson</h5>
+                            <small style="color:var(--text-light)">Founder, Bloom Media</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="faq" style="background-color: var(--bg-subtle);">
+        <div class="container">
+            <div class="section-header">
+                <p>Support</p>
+                <h2>Common Questions</h2>
+            </div>
+            <div class="faq-container">
+                <div class="faq-item">
+                    <h4>What is your typical project timeline?</h4>
+                    <p>Most corporate websites take 2-4 weeks from discovery to final deployment.</p>
+                </div>
+                <div class="faq-item">
+                    <h4>Do you offer post-launch support?</h4>
+                    <p>Yes, we provide 3 months of free maintenance and security updates for every project.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer style="padding: 80px 0 140px; text-align: center; border-top: 1px solid var(--border);">
+        <div class="logo">ELITE<span>CORE</span></div>
+        <p style="color: var(--text-light); margin-top: 15px; font-size: 0.9rem;">Building the digital future, one pixel at a time.</p>
+        <div style="margin-top: 25px; display: flex; justify-content: center; gap: 20px; color: var(--accent);">
+            <i class="fab fa-linkedin"></i>
+            <i class="fab fa-twitter"></i>
+            <i class="fab fa-instagram"></i>
+        </div>
+    </footer>
+
+    <div class="contact-bar">
+        <a href="tel:+919517048512"><i class="fas fa-phone-alt"></i> Call</a>
+        <div class="sep"></div>
+        <a href="https://wa.me/919517048512" style="color: #4ade80;"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+    </div>
+
+</body>
+</html>
