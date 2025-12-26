@@ -26,11 +26,7 @@
             overflow-x: hidden;
             background-color: var(--white);
         }
-
-        /* Smooth Scroll */
         html { scroll-behavior: smooth; }
-
-        /* --- Navigation --- */
         nav {
             padding: 15px 0;
             background: rgba(255, 255, 255, 0.9);
@@ -42,15 +38,11 @@
         }
         .logo { font-weight: 800; font-size: 1.4rem; text-decoration: none; color: var(--secondary); }
         .logo span { color: var(--primary); }
-
-        /* --- Hero Section --- */
         .hero {
             padding: 100px 0 60px;
             background: radial-gradient(circle at 90% 10%, #eef2ff 0%, #ffffff 60%);
         }
         .hero h1 { font-size: clamp(2.5rem, 5vw, 4rem); font-weight: 800; line-height: 1.1; letter-spacing: -1px; }
-
-        /* --- About Section --- */
         .about-card {
             background: var(--bg-light);
             border-radius: var(--radius);
@@ -67,8 +59,6 @@
             border: 1px solid #e2e8f0;
             color: var(--primary);
         }
-
-        /* --- Service Section --- */
         .service-card {
             padding: 40px;
             border-radius: var(--radius);
@@ -90,8 +80,6 @@
             display: flex; align-items: center; justify-content: center;
             font-size: 1.5rem; margin-bottom: 25px;
         }
-
-        /* --- Project Section (Images with WhatsApp Link) --- */
         .project-box {
             position: relative;
             border-radius: var(--radius);
@@ -108,8 +96,6 @@
             opacity: 0; transition: 0.3s;
         }
         .project-box:hover .project-overlay { opacity: 1; }
-
-        /* --- FAQ Modern --- */
         .accordion-item {
             border: none;
             margin-bottom: 15px;
@@ -127,8 +113,6 @@
             background: #eef2ff;
             box-shadow: none;
         }
-
-        /* --- Floating Contact Bar --- */
         .contact-bar {
             position: fixed; bottom: 25px; left: 50%; transform: translateX(-50%);
             background: var(--secondary); color: white;
@@ -148,6 +132,9 @@
         .section-title { margin-bottom: 50px; }
         .section-title h2 { font-weight: 800; font-size: 2.5rem; }
         .section-title p { color: var(--primary); font-weight: 700; text-transform: uppercase; font-size: 0.8rem; letter-spacing: 2px; }
+        .footer-link { color: var(--text-muted); text-decoration: none; transition: 0.3s; font-size: 0.9rem; }
+        .footer-link:hover { color: var(--primary); }
+        .modal-content { border-radius: var(--radius); border: none; }
     </style>
 </head>
 <body>
@@ -347,9 +334,40 @@
         </div>
     </section>
 
-    <footer class="py-5 text-center border-top">
-        <p class="text-muted mb-5">&copy; 2025 Kuldeep Vishwakarma. Expert Web Solutions.</p>
+    <footer class="py-5 border-top bg-light mb-5">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-4 text-center text-md-start mb-4 mb-md-0">
+                    <a href="#" class="logo">Free<span>Lancer</span></a>
+                    <p class="text-muted mt-2 mb-0">&copy; 2025 Kuldeep Vishwakarma.<br>Expert Web Solutions.</p>
+                </div>
+                <div class="col-md-4 text-center mb-4 mb-md-0">
+                    <h6 class="fw-bold mb-3">Quick Contact</h6>
+                    <a href="tel:+919517048512" class="footer-link d-block mb-2"><i class="fas fa-phone-alt me-2 text-primary"></i> +91 95170 48512</a>
+                    <a href="mailto:kuldeep.helps@gmail.com" class="footer-link d-block"><i class="fas fa-envelope me-2 text-primary"></i> kuldeep.helps@gmail.com</a>
+                </div>
+                <div class="col-md-4 text-center text-md-end">
+                    <h6 class="fw-bold mb-3">Legal</h6>
+                    <a href="#" class="footer-link" data-bs-toggle="modal" data-bs-target="#privacyModal">Privacy Policy</a>
+                </div>
+            </div>
+        </div>
     </footer>
+
+    <div class="modal fade" id="privacyModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content p-4">
+                <div class="modal-header border-0">
+                    <h4 class="fw-800 mb-0">Privacy Policy</h4>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body text-muted">
+                    <p>We value your privacy. Your contact details (Email/Phone) collected through this website are used only for communication regarding your projects. We do not share your data with any third-party services.</p>
+                    <p>By using this site, you agree to our standard development terms and conditions.</p>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <div class="contact-bar">
         <a href="tel:+919517048512"><i class="fas fa-phone-alt"></i> Call Now</a>
