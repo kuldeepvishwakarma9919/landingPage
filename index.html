@@ -4,11 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kuldeep Vishwakarma | PHP & Laravel Expert</title>
-    
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
     <style>
         :root {
             --primary: #4f46e5;
@@ -20,6 +18,19 @@
             --radius: 20px;
         }
 
+
+          :root {
+            --primary: #4f46e5;
+            --text-dark: #0f172a;
+            --text-light: #64748b;
+            --border-color: #f1f5f9;
+        }
+
+        /* body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: #ffffff;
+            color: var(--text-dark);
+        } */
         body {
             font-family: 'Plus Jakarta Sans', sans-serif;
             color: var(--secondary);
@@ -135,6 +146,77 @@
         .footer-link { color: var(--text-muted); text-decoration: none; transition: 0.3s; font-size: 0.9rem; }
         .footer-link:hover { color: var(--primary); }
         .modal-content { border-radius: var(--radius); border: none; }
+
+
+      
+
+        .section-padding { padding: 80px 0; }
+
+        /* Minimal Tab Switcher */
+        .nav-pills {
+            background: #f8fafc;
+            padding: 6px;
+            border-radius: 14px;
+            display: inline-flex;
+            border: 1px solid #e2e8f0;
+        }
+        .nav-pills .nav-link {
+            color: var(--text-light);
+            font-weight: 600;
+            border-radius: 10px;
+            padding: 10px 25px;
+            transition: 0.3s ease;
+        }
+        .nav-pills .nav-link.active {
+            background: #ffffff;
+            color: var(--primary);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+        }
+
+        /* Clean Card UI */
+        .pricing-card {
+            border: 1px solid #e2e8f0;
+            border-radius: 24px;
+            padding: 40px;
+            height: 100%;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            background: #fff;
+            display: flex;
+            flex-direction: column;
+        }
+        .pricing-card:hover {
+            border-color: var(--primary);
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.03);
+        }
+
+        .featured { border: 2px solid var(--primary); position: relative; }
+        .popular-label {
+            position: absolute; top: -14px; left: 50%; transform: translateX(-50%);
+            background: var(--primary); color: white; padding: 4px 15px;
+            border-radius: 50px; font-size: 0.75rem; font-weight: 700;
+        }
+
+        .plan-name { font-weight: 700; color: var(--text-light); font-size: 0.85rem; text-transform: uppercase; letter-spacing: 1px; }
+        .price { font-size: 2.5rem; font-weight: 800; margin: 15px 0; color: var(--text-dark); }
+        .price span { font-size: 1rem; color: var(--text-light); font-weight: 500; }
+
+        .feature-list { list-style: none; padding: 0; margin: 30px 0; flex-grow: 1; }
+        .feature-item { display: flex; align-items: flex-start; gap: 12px; margin-bottom: 16px; font-size: 0.95rem; color: #475569; }
+        .feature-item i { color: #10b981; margin-top: 4px; font-size: 0.9rem; }
+
+        .btn-action {
+            display: block; width: 100%; padding: 15px; border-radius: 12px;
+            font-weight: 700; text-decoration: none; text-align: center;
+            border: 1px solid var(--primary); color: var(--primary); transition: 0.3s;
+        }
+        .featured .btn-action { background: var(--primary); color: white; }
+        .btn-action:hover { background: var(--primary); color: white; }
+
+        .note-box {
+            background: #f8fafc; border-radius: 12px; padding: 15px; margin-top: 40px;
+            display: inline-block; border: 1px dashed #cbd5e1;
+        }
     </style>
 </head>
 <body>
@@ -220,6 +302,149 @@
             </div>
         </div>
     </section>
+
+
+
+  <section class="section-padding py-5">
+    <div class="container text-center">
+        <h2 class="fw-800 mb-3" style="font-size: 2.5rem; font-weight: 800;">Website Development Plans</h2>
+        <p class="text-muted mb-5">Custom & Secure solutions built with <b>CodeIgniter & Laravel</b></p>
+
+        <ul class="nav nav-pills mb-5 justify-content-center" id="pills-tab" role="tablist">
+            <li class="nav-item"><button class="nav-link active" data-bs-toggle="pill" data-bs-target="#business">Business</button></li>
+            <li class="nav-item"><button class="nav-link" data-bs-toggle="pill" data-bs-target="#school">School/ERP</button></li>
+            <li class="nav-item"><button class="nav-link" data-bs-toggle="pill" data-bs-target="#ecommerce">E-Commerce</button></li>
+        </ul>
+
+        <div class="tab-content" id="pills-tabContent">
+            
+            <div class="tab-pane fade show active" id="business">
+                <div class="row g-4 text-start">
+                    <div class="col-lg-4">
+                        <div class="pricing-card">
+                            <span class="plan-name">Basic Startup</span>
+                            <div class="price">₹4,999 <span>/fixed</span></div>
+                            <ul class="feature-list">
+                                <li class="feature-item"><i class="fas fa-check"></i> 5 Professional Pages</li>
+                                <li class="feature-item"><i class="fas fa-check"></i> Fully Responsive (Mobile Friendly)</li>
+                                <li class="feature-item"><i class="fas fa-check"></i> Basic SEO Setup</li>
+                                <li class="feature-item"><i class="fas fa-check"></i> WhatsApp Chat Integration</li>
+                            </ul>
+                            <a href="https://wa.me/919517048512?text=I%20am%20interested%20in%20the%20Basic%20Startup%20Plan" class="btn-action">Start Project</a>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="pricing-card featured">
+                            <div class="popular-label">RECOMMENDED</div>
+                            <span class="plan-name">Professional</span>
+                            <div class="price">₹7,999 <span>/fixed</span></div>
+                            <ul class="feature-list">
+                                <li class="feature-item"><i class="fas fa-check"></i> 12 Dynamic Pages</li>
+                                <li class="feature-item"><i class="fas fa-check"></i> <b>Custom Admin Panel</b></li>
+                                <li class="feature-item"><i class="fas fa-check"></i> Advanced UI/UX Design</li>
+                                <li class="feature-item"><i class="fas fa-check"></i> Contact Form with Email</li>
+                            </ul>
+                            <a href="https://wa.me/919517048512?text=I%20am%20interested%20in%20the%20Professional%20Plan" class="btn-action">Most Popular</a>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="pricing-card">
+                            <span class="plan-name">Business Pro</span>
+                            <div class="price">₹11,999 <span>/fixed</span></div>
+                            <ul class="feature-list">
+                                <li class="feature-item"><i class="fas fa-check"></i> Unlimited Pages</li>
+                                <li class="feature-item"><i class="fas fa-check"></i> Advanced CMS Setup</li>
+                                <li class="feature-item"><i class="fas fa-check"></i> Blog/News Integration</li>
+                                <li class="feature-item"><i class="fas fa-check"></i> 1 Month Bug Support</li>
+                            </ul>
+                            <a href="https://wa.me/919517048512?text=I%20am%20interested%20in%20the%20Business%20Pro%20Plan" class="btn-action">Get Premium</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tab-pane fade" id="school">
+                <div class="row g-4 text-start">
+                    <div class="col-lg-4">
+                        <div class="pricing-card">
+                            <span class="plan-name">Essential ERP</span>
+                            <div class="price">₹12,499 <span>/start</span></div>
+                            <ul class="feature-list">
+                                <li class="feature-item"><i class="fas fa-check"></i> Student Management</li>
+                                <li class="feature-item"><i class="fas fa-check"></i> Fee Record Tracking</li>
+                                <li class="feature-item"><i class="fas fa-check"></i> Staff Login System</li>
+                            </ul>
+                            <a href="https://wa.me/919517048512?text=Hi,%20I%20need%20information%20about%20the%20Essential%20ERP" class="btn-action">Contact Us</a>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="pricing-card featured">
+                            <span class="plan-name">Advanced ERP</span>
+                            <div class="price">₹21,999 <span>/start</span></div>
+                            <ul class="feature-list">
+                                <li class="feature-item"><i class="fas fa-check"></i> Marks & Result Portal</li>
+                                <li class="feature-item"><i class="fas fa-check"></i> Library & Inventory</li>
+                                <li class="feature-item"><i class="fas fa-check"></i> SMS API Integration</li>
+                                <li class="feature-item"><i class="fas fa-check"></i> Auto ID Card Generator</li>
+                            </ul>
+                            <a href="https://wa.me/919517048512?text=Hi,%20I%20want%20to%20discuss%20the%20Advanced%20ERP%20system" class="btn-action">Most Popular</a>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="pricing-card">
+                            <span class="plan-name">Custom Solution</span>
+                            <div class="price">Quote <span>/custom</span></div>
+                            <ul class="feature-list">
+                                <li class="feature-item"><i class="fas fa-check"></i> Multi-Campus Control</li>
+                                <li class="feature-item"><i class="fas fa-check"></i> Custom Module Building</li>
+                                <li class="feature-item"><i class="fas fa-check"></i> Complete Source Code</li>
+                            </ul>
+                            <a href="https://wa.me/919517048512?text=Hi,%20I%20have%20a%20custom%20ERP%20requirement" class="btn-action">Discuss Idea</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tab-pane fade" id="ecommerce">
+                <div class="row g-4 text-start justify-content-center">
+                    <div class="col-lg-5">
+                        <div class="pricing-card">
+                            <span class="plan-name">Single Vendor Store</span>
+                            <div class="price">₹14,999 <span>/start</span></div>
+                            <ul class="feature-list">
+                                <li class="feature-item"><i class="fas fa-check"></i> Payment Gateway Integration</li>
+                                <li class="feature-item"><i class="fas fa-check"></i> Inventory & Stock Engine</li>
+                                <li class="feature-item"><i class="fas fa-check"></i> Coupon & Discount Logic</li>
+                                <li class="feature-item"><i class="fas fa-check"></i> User Order Tracking</li>
+                            </ul>
+                            <a href="https://wa.me/919517048512?text=I%20want%20to%20build%20a%20Single%20Vendor%20E-commerce%20Store" class="btn-action">Start Selling</a>
+                        </div>
+                    </div>
+                    <div class="col-lg-5">
+                        <div class="pricing-card featured">
+                            <span class="plan-name">Multi-Vendor Portal</span>
+                            <div class="price">₹32,999 <span>/start</span></div>
+                            <ul class="feature-list">
+                                <li class="feature-item"><i class="fas fa-check"></i> Seller Dashboard System</li>
+                                <li class="feature-item"><i class="fas fa-check"></i> Admin Commission Control</li>
+                                <li class="feature-item"><i class="fas fa-check"></i> Seller Payout Tracking</li>
+                                <li class="feature-item"><i class="fas fa-check"></i> Advanced Sales Analytics</li>
+                            </ul>
+                            <a href="https://wa.me/919517048512?text=I%20am%20interested%20in%20a%20Multi-vendor%20Marketplace" class="btn-action">Most Popular</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="note-box mt-5">
+            <p class="mb-0 text-muted" style="font-size: 0.85rem;">
+                <i class="fas fa-info-circle me-2 text-primary"></i>
+                <b>Important:</b> This pricing is for <b>Development & Coding</b>. Domain and Hosting are not included.
+            </p>
+        </div>
+    </div>
+</section>
 
 
    <section id="projects" class="py-5" style="background: var(--bg-light);">
@@ -366,6 +591,9 @@
             </div>
         </div>
     </section>
+
+
+
 
 
 
